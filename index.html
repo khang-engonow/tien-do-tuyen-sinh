@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#BA3638">
+<title>Tiến độ mục tiêu tuyển sinh · Engonow</title>
+<style>
+html{background:#F3F1EE;-webkit-text-size-adjust:100%}
+body{margin:0;-webkit-font-smoothing:antialiased}
+.eo-page{max-width:1120px;margin:0 auto;padding:16px}
+@media (max-width:540px){.eo-page{padding:10px}}
+</style>
+</head>
+<body>
+<main class="eo-page">
+<style>
+@font-face{font-family:"EO BVP";src:url("assets/fonts/bvp-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"EO BVP";src:url("assets/fonts/bvp-SemiBold.woff2") format("woff2");font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:"EO BVP";src:url("assets/fonts/bvp-Bold.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"EO Lora";src:url("assets/fonts/lora-700.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap}
+.eo{--g:#BA3638;--gd:#8E2728;--cream:#FFF7F2;--ink:#1F2937;--slate:#6C757D;--gold:#C9A24B;--hair:rgba(31,41,55,.12);--ease:cubic-bezier(.2,.8,.2,1);
+  display:flex;flex-direction:column;gap:14px;color:var(--ink);line-height:1.5;font-family:"EO BVP","Be Vietnam Pro",Arial,sans-serif}
+.eo *{box-sizing:border-box}
+.eo-num,.eo-stats dd,.eo-avg-n,.eo-yt dd,.eo-time-top b,.eo-lead b,.eo-chart svg text,.eo-ms button{font-variant-numeric:tabular-nums}
+.eo h1,.eo h2{font-family:"EO Lora","Lora",Cambria,Georgia,serif;font-weight:700;margin:0;text-wrap:balance}
+.eo-hero{background:var(--g);color:#fff;border-radius:20px;padding:22px;display:flex;flex-direction:column;gap:18px;overflow:hidden}
+.eo-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.eo-logo{display:block;height:32px;width:auto}
+.eo-tag{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;opacity:.85}
+.eo-pick{display:flex;flex-direction:column;gap:6px;min-width:0}
+.eo-pick-l{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;opacity:.85}
+.eo-ms{position:relative;display:flex;align-items:center;gap:2px;overflow-x:auto;scrollbar-width:none;padding:4px;border-radius:999px;background:rgba(255,255,255,.14);min-height:42px}
+.eo-ms::-webkit-scrollbar{display:none}
+.eo-ms-ind{position:absolute;top:4px;left:0;height:34px;width:0;border-radius:999px;background:#fff;z-index:0;transition:transform .5s var(--ease),width .5s var(--ease)}
+.eo-ms button{position:relative;z-index:1;flex:0 0 auto;min-width:46px;height:34px;padding:0 12px;border:0;background:none;color:#fff;font:600 13px "EO BVP","Be Vietnam Pro",Arial,sans-serif;border-radius:999px;cursor:pointer;transition:color .35s var(--ease);touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.eo-ms button[aria-pressed="true"]{color:var(--g)}
+.eo-ms button:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.eo-ms button.run::after{content:"";position:absolute;top:7px;right:6px;width:5px;height:5px;border-radius:50%;background:currentColor}
+.eo-ms .yr{position:relative;z-index:1;flex:0 0 auto;font-size:10.5px;font-weight:700;letter-spacing:.14em;padding:0 6px 0 10px;opacity:.8}
+.eo-kicker{margin:0;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;opacity:.85}
+.eo-h1{margin-top:6px;font-size:clamp(24px,4.4vw,34px);line-height:1.2;letter-spacing:.01em}
+.eo-lead{margin:10px 0 0;font-size:15px;line-height:1.6;max-width:62ch}
+.eo-lead b{font-weight:700}
+.eo-rings{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.eo-ring{margin:0;display:flex;flex-direction:column;align-items:center;gap:10px;min-width:0}
+.eo-dial{position:relative;width:100%;max-width:210px;aspect-ratio:1}
+.eo-dsvg{position:absolute;inset:0}
+.eo-mid{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;pointer-events:none;padding-top:2%}
+.eo-num{font-weight:700;font-size:clamp(24px,7.4vw,46px);line-height:1;letter-spacing:-.01em}
+.eo-num small{font-size:.48em;font-weight:600;margin-left:1px}
+.eo-sub{margin-top:5px;font-size:clamp(9px,2.5vw,12px);opacity:.85;white-space:nowrap}
+.eo-ring figcaption{display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center}
+.eo-cap{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+.eo-pill,.eo-st{font-size:11.5px;font-weight:600;padding:2px 10px;border-radius:999px;border:1px solid currentColor;white-space:nowrap;transition:background-color .35s var(--ease),color .35s var(--ease),border-color .35s var(--ease)}
+.eo-pill{color:#fff}
+.eo-pill.ok,.eo-pill.done{background:#fff;border-color:#fff;color:var(--g)}
+.eo-pill.neutral{border-color:rgba(255,255,255,.5);color:rgba(255,255,255,.85)}
+.eo-st{color:var(--g)}
+.eo-st.ok,.eo-st.done{background:var(--g);border-color:var(--g);color:#fff}
+.eo-st.neutral{border-color:var(--hair);color:var(--slate)}
+.eo-pill.ok::before,.eo-st.ok::before{content:"◆ "}
+.eo-pill.done::before,.eo-st.done::before{content:"★ ";color:var(--gold)}
+.eo-pill.warn::before,.eo-st.warn::before,.eo-pill.bad::before,.eo-st.bad::before{content:"◇ "}
+.eo-pill.bad,.eo-st.bad{border-style:dashed}
+.eo-key{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 18px;margin:-4px 0 0;padding:0;list-style:none;font-size:11.5px;opacity:.9}
+.eo-key svg{display:inline-block;vertical-align:middle;margin-right:6px}
+.eo-time{border-top:1px solid rgba(255,255,255,.28);padding-top:14px}
+.eo-time-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;font-size:13px}
+.eo-time-top>span:first-child{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;opacity:.85}
+.eo-time-top b{font-weight:700}
+.eo-track{position:relative;min-height:28px;margin-top:6px}
+.eo-time-ends{display:flex;justify-content:space-between;gap:10px;font-size:11.5px;opacity:.85}
+.eo-card{background:#fff;color:var(--ink);border:1px solid var(--hair);border-radius:20px;padding:20px;min-width:0}
+.eo-card h2{font-size:18px;line-height:1.3}
+.eo-def{margin:4px 0 0;font-size:13px;color:var(--slate);line-height:1.55}
+.eo-def b{color:var(--ink)}
+.eo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.eo-ytd{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:14px 0 0}
+.eo-yt{margin:0;background:var(--cream);border-radius:14px;padding:12px 14px;min-width:0}
+.eo-yt dt{font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--slate);line-height:1.3}
+.eo-yt dd{margin:6px 0 0;font-weight:700;font-size:30px;line-height:1;color:var(--g)}
+.eo-yt dd small{font-size:13px;font-weight:600;color:var(--slate)}
+.eo-yt p{margin:8px 0 0;font-size:12px;line-height:1.4;color:var(--slate)}
+.eo-yt p b{color:var(--ink)}
+.eo-needs{margin-top:6px}
+.eo-need{padding:14px 0 2px;border-top:1px solid var(--hair)}
+.eo-need:first-child{border-top:0}
+.eo-need-h{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.eo-need-n{font-weight:700;font-size:15px}
+.eo-bullet{position:relative;min-height:24px;margin-top:10px}
+.eo-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:10px 0 0}
+.eo-stats>div{min-width:0}
+.eo-stats dt{font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--slate);line-height:1.3}
+.eo-stats dd{margin:4px 0 0;font-weight:700;font-size:22px;line-height:1.1}
+.eo-stats dd small{font-size:12px;font-weight:600;color:var(--slate)}
+.eo-avg{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin-top:12px}
+.eo-avg-n{font-weight:700;font-size:44px;line-height:1;color:var(--g)}
+.eo-avg-u{font-size:14px;font-weight:600;color:var(--slate)}
+.eo-avg-c{margin:6px 0 0;font-size:13px;color:var(--slate)}
+.eo-avg-c b{color:var(--ink)}
+.eo-up{color:var(--g)}.eo-dn{color:var(--gd)}
+.eo-cmpline{margin:8px 0 0;font-size:13px;color:var(--slate);line-height:1.5}
+.eo-cmpline b{color:var(--ink)}
+.eo-chart{position:relative;min-height:220px;margin-top:12px}
+.eo-chart-sm{min-height:160px}
+.eo-chart svg text{fill:var(--slate);font-size:11px;font-family:"EO BVP","Be Vietnam Pro",Arial,sans-serif}
+.eo-chart svg text.eo-strong{fill:var(--ink);font-weight:700;font-size:12px}
+.eo-chart svg text.eo-lab{fill:var(--ink);font-weight:600;font-size:12px}
+.eo-chart svg text.eo-on{fill:var(--g);font-weight:700}
+.eo-legend{display:flex;flex-wrap:wrap;gap:4px 18px;margin:10px 0 0;padding:0;list-style:none;font-size:12px;color:var(--slate)}
+.eo-sw{display:inline-block;width:18px;height:3px;border-radius:2px;vertical-align:middle;margin-right:6px;background:var(--g)}
+.eo-sw.pace{height:0;border-top:2px dashed var(--slate);background:none;border-radius:0}
+.eo-sw.avg{height:0;border-top:2.5px dotted var(--gd);background:none;border-radius:0}
+.eo-sw.tgt{height:2px;background:var(--gd)}
+.eo-sw.run{width:9px;height:9px;border-radius:50%;background:#fff;border:2px solid var(--g)}
+.eo-sw.band{width:12px;height:12px;border-radius:3px;background:rgba(186,54,56,.12)}
+.eo-tip{position:absolute;pointer-events:none;background:#fff;color:var(--ink);border:1px solid var(--hair);border-top:3px solid var(--g);border-radius:10px;padding:6px 10px;font-size:12px;line-height:1.5;white-space:nowrap;z-index:3;box-shadow:0 10px 24px -12px rgba(31,41,55,.4)}
+.eo-tip-h{font-weight:700}
+.eo-foot{display:flex;flex-direction:column;gap:12px;font-size:12.5px;color:var(--slate)}
+.eo-foot p{margin:0;line-height:1.55}
+.eo-foot details summary{cursor:pointer;color:var(--ink);font-weight:600}
+.eo-foot ul{margin:8px 0 0;padding-left:1.2em;display:flex;flex-direction:column;gap:4px;line-height:1.55}
+.eo-sign{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;border-top:1px solid var(--hair);padding-top:10px;font-size:11.5px}
+.eo-sign b{font-family:"EO Lora","Lora",Georgia,serif;color:var(--g);letter-spacing:.14em}
+@media (max-width:640px){.eo-ytd{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:540px){.eo-pill{font-size:10.5px;padding:2px 8px;max-width:100%;white-space:normal;text-align:center;line-height:1.3}.eo-cap{font-size:10.5px;letter-spacing:.08em}.eo-h1{font-size:25px}.eo-hero{padding:18px 14px;border-radius:16px}.eo-card{padding:16px;border-radius:16px}.eo-rings{gap:6px}.eo-stats dd{font-size:19px}.eo-avg-n{font-size:38px}.eo-yt dd{font-size:26px}}
+@media (prefers-reduced-motion:no-preference){
+  .eo>*{animation:eoRise .75s var(--ease) both}
+  .eo>:nth-child(2){animation-delay:.08s}.eo>:nth-child(3){animation-delay:.16s}.eo>:nth-child(4){animation-delay:.24s}.eo>:nth-child(5){animation-delay:.32s}.eo>:nth-child(6){animation-delay:.4s}
+  .eo-band{animation:eoFade .45s var(--ease) both}
+}
+@keyframes eoRise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes eoFade{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-motion:reduce){.eo-ms-ind,.eo-ms button,.eo-pill,.eo-st{transition:none}}
+</style>
+
+<div class="eo" id="kp-root" lang="vi">
+  <section class="eo-hero" id="tieu-de">
+    <div class="eo-bar">
+      <img class="eo-logo" src="assets/engonow-white.png" alt="ENGONOW">
+      <span class="eo-tag">Khối Vận hành · Nội bộ</span>
+    </div>
+    <div class="eo-pick" id="chon-ky">
+      <span class="eo-pick-l">Chọn kỳ để xem</span>
+      <div class="eo-ms" data-draw="months" data-source="months" role="group" aria-label="Chọn kỳ KPI"></div>
+    </div>
+    <div>
+      <p class="eo-kicker">Kỳ KPI <span data-draw="f" data-source="selm" data-field="label" data-row="0">—</span> · <span data-draw="f" data-fmt="lc" data-source="selm" data-field="state" data-row="0">—</span><span data-show="run"> · cập nhật <span data-draw="f" data-source="selm" data-field="asof_vi" data-row="0">—</span></span></p>
+      <h1 class="eo-h1">Tiến độ mục tiêu tuyển sinh</h1>
+      <p class="eo-lead" id="tom-tat">Doanh thu mới đạt <b data-draw="f" data-source="sel" data-field="pct" data-where="kpi=newsales">—</b>% mục tiêu (<span data-draw="f" data-fmt="lc" data-source="sel" data-field="status" data-where="kpi=newsales">—</span>), học viên mới <b data-draw="f" data-source="sel" data-field="pct" data-where="kpi=newstudents">—</b>% (<span data-draw="f" data-fmt="lc" data-source="sel" data-field="status" data-where="kpi=newstudents">—</span>), tái tục <b data-draw="f" data-source="sel" data-field="pct" data-where="kpi=reenroll">—</b>% so với ngưỡng <b data-draw="f" data-source="sel" data-field="target" data-where="kpi=reenroll">—</b>% (<span data-draw="f" data-fmt="lc" data-source="sel" data-field="status" data-where="kpi=reenroll">—</span>).</p>
+    </div>
+
+    <div class="eo-rings" id="vong-chi-so">
+      <figure class="eo-ring" id="vong-tai-tuc">
+        <div class="eo-dial">
+          <div class="eo-dsvg" data-draw="dial" data-kpi="reenroll" data-source="sel"></div>
+          <div class="eo-mid"><span class="eo-num"><span data-draw="num" data-source="sel" data-field="pct" data-where="kpi=reenroll">—</span><small>%</small></span><span class="eo-sub"><span data-show="run">nhịp</span><span data-show="done" hidden>mục tiêu</span> <span data-draw="f" data-source="sel" data-field="pace" data-where="kpi=reenroll">—</span>%</span></div>
+        </div>
+        <figcaption><span class="eo-cap">Tái tục</span><span class="eo-pill neutral" data-draw="pill" data-base="eo-pill" data-source="sel" data-field="status" data-where="kpi=reenroll">—</span></figcaption>
+      </figure>
+      <figure class="eo-ring" id="vong-doanh-thu-moi">
+        <div class="eo-dial">
+          <div class="eo-dsvg" data-draw="dial" data-kpi="newsales" data-source="sel"></div>
+          <div class="eo-mid"><span class="eo-num"><span data-draw="num" data-source="sel" data-field="pct" data-where="kpi=newsales">—</span><small>%</small></span><span class="eo-sub"><span data-show="run">nhịp</span><span data-show="done" hidden>mục tiêu</span> <span data-draw="f" data-source="sel" data-field="pace" data-where="kpi=newsales">—</span>%</span></div>
+        </div>
+        <figcaption><span class="eo-cap">Doanh thu mới</span><span class="eo-pill neutral" data-draw="pill" data-base="eo-pill" data-source="sel" data-field="status" data-where="kpi=newsales">—</span></figcaption>
+      </figure>
+      <figure class="eo-ring" id="vong-hoc-vien-moi">
+        <div class="eo-dial">
+          <div class="eo-dsvg" data-draw="dial" data-kpi="newstudents" data-source="sel"></div>
+          <div class="eo-mid"><span class="eo-num"><span data-draw="num" data-source="sel" data-field="pct" data-where="kpi=newstudents">—</span><small>%</small></span><span class="eo-sub"><span data-show="run">nhịp</span><span data-show="done" hidden>mục tiêu</span> <span data-draw="f" data-source="sel" data-field="pace" data-where="kpi=newstudents">—</span>%</span></div>
+        </div>
+        <figcaption><span class="eo-cap">Học viên mới</span><span class="eo-pill neutral" data-draw="pill" data-base="eo-pill" data-source="sel" data-field="status" data-where="kpi=newstudents">—</span></figcaption>
+      </figure>
+    </div>
+    <ul class="eo-key" aria-label="Chú giải vòng đo">
+      <li><svg width="18" height="10" aria-hidden="true"><rect x="0" y="3" width="18" height="4" rx="2" fill="#fff"/></svg>Đã đạt</li>
+      <li data-show="run"><svg width="10" height="14" aria-hidden="true"><line x1="5" y1="2" x2="5" y2="12" stroke="#fff" stroke-width="6" stroke-linecap="round"/><line x1="5" y1="2" x2="5" y2="12" stroke="#8E2728" stroke-width="3" stroke-linecap="round"/></svg>Nhịp cần có hôm nay</li>
+      <li><svg width="10" height="10" aria-hidden="true"><circle cx="5" cy="5" r="3.5" fill="#fff"/></svg>Mục tiêu</li>
+    </ul>
+
+    <div class="eo-time" id="thoi-gian-ky">
+      <div class="eo-time-top"><span>Thời gian của kỳ</span><span data-show="run">Ngày <b data-draw="f" data-source="selm" data-field="elapsed_days" data-row="0">—</b>/<b data-draw="f" data-source="selm" data-field="total_days" data-row="0">—</b> · còn <b data-draw="f" data-source="selm" data-field="left_days" data-row="0">—</b> ngày đến ngày chốt</span><span data-show="done" hidden>Đã chốt · đủ <b data-draw="f" data-source="selm" data-field="total_days" data-row="0">—</b> ngày</span></div>
+      <div class="eo-track" data-draw="timeline" data-source="selm"></div>
+      <div class="eo-time-ends"><span>Từ <span data-draw="f" data-source="selm" data-field="start_vi" data-row="0">—</span></span><span>Chốt hết ngày <span data-draw="f" data-source="selm" data-field="end_vi" data-row="0">—</span></span></div>
+    </div>
+  </section>
+
+  <section class="eo-card" id="trung-binh">
+    <h2>Trung bình đến kỳ đang xem</h2>
+    <p class="eo-def" data-show="ytd">Trung bình các kỳ đã chốt từ <b data-draw="f" data-source="selm" data-field="ytd_from" data-row="0">—</b> đến <b data-draw="f" data-source="selm" data-field="ytd_to" data-row="0">—</b> (<b data-draw="f" data-source="selm" data-field="ytd_n" data-row="0">—</b> kỳ).<span data-show="cmp"> Dòng dưới mỗi ô so <span data-draw="f" data-source="selm" data-field="cmp_basis" data-row="0">—</span> của kỳ đang xem với trung bình các kỳ trước nó (<span data-draw="f" data-source="selm" data-field="prior_n" data-row="0">—</span> kỳ).</span></p>
+    <p class="eo-def" data-show="noytd" hidden>Chưa có kỳ nào đã chốt trước kỳ này trong năm.</p>
+    <dl class="eo-ytd">
+      <div class="eo-yt"><dt>Tái tục</dt><dd><span data-draw="num" data-source="selm" data-field="ytd_reenroll" data-row="0">—</span><small>%</small></dd><p data-show="cmp">Kỳ đang xem: <b data-draw="sign" data-source="selm" data-field="cmp_reenroll" data-row="0">—</b> điểm</p></div>
+      <div class="eo-yt"><dt>Doanh thu mới</dt><dd><span data-draw="num" data-source="selm" data-field="ytd_newsales" data-row="0">—</span><small>%</small></dd><p data-show="cmp">Kỳ đang xem: <b data-draw="sign" data-source="selm" data-field="cmp_newsales" data-row="0">—</b> điểm</p></div>
+      <div class="eo-yt"><dt>Học viên mới</dt><dd><span data-draw="num" data-source="selm" data-field="ytd_newstudents" data-row="0">—</span><small>%</small></dd><p data-show="cmp">Kỳ đang xem: <b data-draw="sign" data-source="selm" data-field="cmp_newstudents" data-row="0">—</b> điểm</p></div>
+      <div class="eo-yt"><dt>Bình quân mỗi học viên mới</dt><dd><span data-draw="num" data-fmt="2" data-source="selm" data-field="ytd_avg_m" data-row="0">—</span><small> tr ₫</small></dd><p>Kỳ đang xem: <b data-draw="f" data-fmt="2" data-source="selm" data-field="avg_m" data-row="0">—</b> tr ₫</p></div>
+    </dl>
+  </section>
+
+  <section class="eo-card" id="can-toi-dau">
+    <h2 data-show="run">Cần tới đâu để đạt mục tiêu</h2>
+    <h2 data-show="done" hidden>Kết quả chốt so với mục tiêu</h2>
+    <p class="eo-def">Số liệu tính đến hết ngày <span data-draw="f" data-source="selm" data-field="data_through_vi" data-row="0">—</span>. Thanh là phần đã đạt, vạch đậm là mục tiêu<span data-show="run">, vạch đứt là nhịp cần có hôm nay</span>.</p>
+    <div class="eo-needs">
+      <div class="eo-need" id="can-tai-tuc">
+        <div class="eo-need-h"><span class="eo-need-n">Tái tục</span><span class="eo-st neutral" data-draw="pill" data-base="eo-st" data-source="sel" data-field="status" data-where="kpi=reenroll">—</span></div>
+        <div class="eo-bullet" data-draw="bullet" data-kpi="reenroll" data-source="sel"></div>
+        <dl class="eo-stats">
+          <div data-show="short" data-kpi="reenroll"><dt>Còn thiếu</dt><dd><span data-draw="f" data-source="sel" data-field="gap" data-where="kpi=reenroll">—</span><small> điểm %</small></dd></div>
+          <div data-show="met" data-kpi="reenroll" hidden><dt>Đã vượt</dt><dd><span data-draw="f" data-source="sel" data-field="surplus" data-where="kpi=reenroll">—</span><small> điểm %</small></dd></div>
+          <div data-show="run"><dt>Mỗi ngày cần</dt><dd><span data-draw="f" data-fmt="1" data-source="sel" data-field="need_per_day" data-where="kpi=reenroll">—</span><small> điểm %</small></dd></div>
+          <div data-show="run"><dt>Cuối kỳ nếu giữ tốc độ</dt><dd><span data-draw="f" data-source="sel" data-field="projected" data-where="kpi=reenroll">—</span><small>%</small></dd></div>
+          <div data-show="done" hidden><dt>Trung bình đến kỳ này</dt><dd><span data-draw="f" data-source="selm" data-field="ytd_reenroll" data-row="0">—</span><small>%</small></dd></div>
+          <div data-show="done" hidden><dt>So với TB các kỳ trước</dt><dd><span data-draw="sign" data-source="selm" data-field="cmp_reenroll" data-row="0">—</span><small> điểm</small></dd></div>
+        </dl>
+      </div>
+      <div class="eo-need" id="can-doanh-thu-moi">
+        <div class="eo-need-h"><span class="eo-need-n">Doanh thu mới</span><span class="eo-st neutral" data-draw="pill" data-base="eo-st" data-source="sel" data-field="status" data-where="kpi=newsales">—</span></div>
+        <div class="eo-bullet" data-draw="bullet" data-kpi="newsales" data-source="sel"></div>
+        <dl class="eo-stats">
+          <div data-show="short" data-kpi="newsales"><dt>Còn thiếu</dt><dd><span data-draw="f" data-source="sel" data-field="gap" data-where="kpi=newsales">—</span><small> điểm %</small></dd></div>
+          <div data-show="met" data-kpi="newsales" hidden><dt>Đã vượt</dt><dd><span data-draw="f" data-source="sel" data-field="surplus" data-where="kpi=newsales">—</span><small> điểm %</small></dd></div>
+          <div data-show="run"><dt>Mỗi ngày cần</dt><dd><span data-draw="f" data-fmt="1" data-source="sel" data-field="need_per_day" data-where="kpi=newsales">—</span><small> điểm %</small></dd></div>
+          <div data-show="run"><dt>Cuối kỳ nếu giữ tốc độ</dt><dd><span data-draw="f" data-source="sel" data-field="projected" data-where="kpi=newsales">—</span><small>%</small></dd></div>
+          <div data-show="done" hidden><dt>Trung bình đến kỳ này</dt><dd><span data-draw="f" data-source="selm" data-field="ytd_newsales" data-row="0">—</span><small>%</small></dd></div>
+          <div data-show="done" hidden><dt>So với TB các kỳ trước</dt><dd><span data-draw="sign" data-source="selm" data-field="cmp_newsales" data-row="0">—</span><small> điểm</small></dd></div>
+        </dl>
+      </div>
+      <div class="eo-need" id="can-hoc-vien-moi">
+        <div class="eo-need-h"><span class="eo-need-n">Học viên mới</span><span class="eo-st neutral" data-draw="pill" data-base="eo-st" data-source="sel" data-field="status" data-where="kpi=newstudents">—</span></div>
+        <div class="eo-bullet" data-draw="bullet" data-kpi="newstudents" data-source="sel"></div>
+        <dl class="eo-stats">
+          <div data-show="short" data-kpi="newstudents"><dt>Còn thiếu</dt><dd><span data-draw="f" data-source="sel" data-field="gap" data-where="kpi=newstudents">—</span><small> điểm %</small></dd></div>
+          <div data-show="met" data-kpi="newstudents" hidden><dt>Đã vượt</dt><dd><span data-draw="f" data-source="sel" data-field="surplus" data-where="kpi=newstudents">—</span><small> điểm %</small></dd></div>
+          <div data-show="run"><dt>Mỗi ngày cần</dt><dd><span data-draw="f" data-fmt="1" data-source="sel" data-field="need_per_day" data-where="kpi=newstudents">—</span><small> điểm %</small></dd></div>
+          <div data-show="run"><dt>Cuối kỳ nếu giữ tốc độ</dt><dd><span data-draw="f" data-source="sel" data-field="projected" data-where="kpi=newstudents">—</span><small>%</small></dd></div>
+          <div data-show="done" hidden><dt>Trung bình đến kỳ này</dt><dd><span data-draw="f" data-source="selm" data-field="ytd_newstudents" data-row="0">—</span><small>%</small></dd></div>
+          <div data-show="done" hidden><dt>So với TB các kỳ trước</dt><dd><span data-draw="sign" data-source="selm" data-field="cmp_newstudents" data-row="0">—</span><small> điểm</small></dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <div class="eo-grid">
+    <section class="eo-card" id="tien-do-ky">
+      <h2>Doanh thu mới theo ngày trong kỳ</h2>
+      <p class="eo-cmpline" data-show="day">Đến ngày <b data-draw="f" data-source="dayx" data-field="label" data-row="0">—</b>, kỳ đang xem đạt <b data-draw="f" data-source="dayx" data-field="sales" data-row="0">—</b>% mục tiêu<span data-show="dayavg">; các kỳ trước trong năm trung bình <b data-draw="f" data-source="dayx" data-field="prior_avg" data-row="0">—</b>% ở cùng ngày (<span data-draw="f" data-source="dayx" data-field="prior_n" data-row="0">—</span> kỳ), chênh <b data-draw="sign" data-source="dayx" data-field="diff" data-row="0">—</b> điểm</span>.</p>
+      <p class="eo-cmpline" data-show="noday" hidden>Kỳ này không có số liệu theo ngày.</p>
+      <ul class="eo-legend" data-source="selday">
+        <li><span class="eo-sw"></span>Kỳ đang xem, cộng dồn</li>
+        <li><span class="eo-sw avg"></span>TB các kỳ trước cùng ngày</li>
+        <li><span class="eo-sw pace"></span>Nhịp đều</li>
+        <li><span class="eo-sw tgt"></span>Mục tiêu 100%</li>
+      </ul>
+      <div class="eo-chart" data-draw="curve" data-source="selday"></div>
+    </section>
+
+    <section class="eo-card" id="binh-quan">
+      <h2>Bình quân mỗi học viên mới</h2>
+      <p class="eo-def">Thực thu từ học viên mới chia cho số học viên mới của kỳ (average sales per capita). Đây là con số tiền duy nhất trên trang. Chạm một cột để xem kỳ đó.</p>
+      <div class="eo-avg"><span class="eo-avg-n" data-draw="num" data-fmt="2" data-source="selm" data-field="avg_m" data-row="0">—</span><span class="eo-avg-u">triệu ₫ · <span data-draw="f" data-source="selm" data-field="label" data-row="0">—</span></span></div>
+      <p class="eo-avg-c" data-show="chg"><b data-draw="chg" data-source="selm" data-field="avg_change_pct" data-row="0">—</b><b>%</b> so với kỳ <span data-draw="f" data-source="selm" data-field="prev_label" data-row="0">—</span> (<span data-draw="f" data-fmt="2" data-source="selm" data-field="avg_prev_m" data-row="0">—</span> triệu ₫)</p>
+      <div class="eo-chart eo-chart-sm" data-draw="avg" data-source="months"></div>
+    </section>
+  </div>
+
+  <section class="eo-card" id="lich-su">
+    <h2>Kết quả từng kỳ và trung bình đến kỳ đó</h2>
+    <p class="eo-def">Mỗi dòng một chỉ số. Đường chấm là trung bình các kỳ đã chốt tính đến từng kỳ. Chạm một kỳ để xem chi tiết.</p>
+    <ul class="eo-legend" data-source="months">
+      <li><span class="eo-sw"></span>Kết quả kỳ</li>
+      <li><span class="eo-sw avg"></span>Trung bình đến kỳ đó</li>
+      <li><span class="eo-sw run"></span>Kỳ đang chạy</li>
+      <li><span class="eo-sw band"></span>Kỳ đang xem</li>
+    </ul>
+    <div class="eo-chart" data-draw="history" data-source="months"></div>
+  </section>
+
+  <section class="eo-card eo-foot" id="che-so">
+    <p>Trang dùng chung cho nhiều phòng ban nên chỉ hiển thị tỷ lệ % so với mục tiêu. Số tiền, số học viên và mục tiêu tuyệt đối không có trên trang và trong dữ liệu của trang.</p>
+    <details id="cach-tinh">
+      <summary>Nguồn và cách tính</summary>
+      <ul>
+        <li>Kỳ KPI chạy từ ngày 06 đến hết ngày 05 tháng sau. Số liệu lấy định kỳ từ sheet KPI của Vận hành; ngày cập nhật ghi ở cuối trang.</li>
+        <li>Nhịp cần có hôm nay = mục tiêu × số ngày đã qua ÷ số ngày của kỳ, tức giả định kết quả rải đều theo ngày. Với tái tục, nếu học phí thường đóng dồn vào một thời điểm thì nhịp chỉ để tham khảo.</li>
+        <li>Cuối kỳ nếu giữ tốc độ = % đã đạt ÷ phần thời gian đã qua; chỉ hiện từ ngày thứ 4 của kỳ.</li>
+        <li>Trung bình đến kỳ đang xem = trung bình cộng % các kỳ đã chốt trong năm, tính đến kỳ đó. Kỳ đang chạy chưa vào trung bình. Bình quân mỗi học viên mới của cả giai đoạn = tổng thực thu ÷ tổng học viên mới của các kỳ đó.</li>
+        <li>"So với TB các kỳ trước" lấy kết quả chốt của kỳ đang xem (kỳ đang chạy thì lấy mức cuối kỳ nếu giữ tốc độ) trừ trung bình các kỳ trước nó trong năm.</li>
+        <li>Đường doanh thu mới theo ngày lấy từ bảng theo dõi doanh số của từng tháng, quy về đúng % trong bảng KPI ở ngày cuối; dòng không ghi ngày (điều chỉnh, dòng của tháng sau) không vào đường. T2/2026 không có đường theo ngày vì sổ chỉ ghi từ ngày 01/03. Trung bình cùng ngày lấy các kỳ trước trong năm có đường theo ngày.</li>
+        <li>Vượt nhịp: cao hơn nhịp từ một phần mười trở lên. Theo kịp nhịp: bằng hoặc cao hơn nhịp. Sát nhịp: thấp hơn nhịp không quá một phần mười. Chậm nhịp: thấp hơn nữa. Kỳ đã chốt: Đã đạt mục tiêu, Gần đạt (từ 90% mục tiêu), Chưa đạt.</li>
+      </ul>
+    </details>
+    <div class="eo-sign"><span><b>ENGONOW</b> · Khối Vận hành · Hồ sơ theo dõi KPI (EO-QMS-SOP-KPI-01)</span><span>Cập nhật <span data-draw="f" data-source="selm" data-field="asof_vi" data-row="0">—</span></span></div>
+  </section>
+</div>
+
+</main>
+<script src="assets/d3.min.js"></script>
+<script src="dash-lite.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
