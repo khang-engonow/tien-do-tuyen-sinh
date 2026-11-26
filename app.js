@@ -65,7 +65,9 @@ dash.calc('dayx', {
 
 // ---------- helpers
 window.kp = (function () {
-  const C = {g: '#BA3638', gd: '#8E2728', ink: '#1F2937', slate: '#6C757D', hair: 'rgba(31,41,55,.12)', grid: 'rgba(31,41,55,.07)', tint: 'rgba(186,54,56,.10)', band: 'rgba(186,54,56,.08)'};
+  const C = {g: '#BA3638', gd: '#8E2728', ink: '#1F2937', slate: '#6C757D', hair: '#E6E8EE', grid: 'rgba(50,60,95,.07)', tint: 'rgba(50,60,95,.08)', band: 'rgba(50,60,95,.07)',
+    d: '#323C5F', d2: '#5B6585', d3: '#7B84A0', track: '#E9EBF1', tick: '#D5D9E3', pace: '#ADB5BD'};
+  const ink = (r) => (r && r.tone === 'bad' ? C.g : C.d);
   const fmt = (x, d) => (x == null || isNaN(x)) ? '—' : Number(x).toLocaleString('vi-VN', {minimumFractionDigits: d || 0, maximumFractionDigits: d || 0});
   const signed = (v) => (v == null ? '—' : (v > 0 ? '+' : v < 0 ? '−' : '') + fmt(Math.abs(v), 0));
   function still() { try { return matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) { return true; } }
@@ -128,7 +130,7 @@ window.kp = (function () {
       svg.append('text').attr('class', it.k === on ? 'eo-on' : null).attr('x', x(it.k)).attr('y', y0).attr('text-anchor', 'middle').text(it.label);
     });
   }
-  return {C, fmt, signed, still, rows, row, selMonth, pick, tip, ready, tone, arc, textW, grid, xLabels};
+  return {C, ink, fmt, signed, still, rows, row, selMonth, pick, tip, ready, tone, arc, textW, grid, xLabels};
 })();
 
 // ---------- what shows: running vs closed cycle, short vs met, averages present
@@ -184,7 +186,7 @@ dash.draw('num', {
     st.v = v;
     if (kp.still() || from === v) { el.textContent = kp.fmt(v, dec); return; }
     const i = d3.interpolateNumber(from == null ? 0 : from, v);
-    d3.select(el).transition().duration(900).ease(d3.easeCubicOut).tween('text', () => (t) => { el.textContent = kp.fmt(i(t), dec); });
+    d3.select(el).transition().duration(700).ease(d3.easeCubicOut).tween('text', () => (t) => { el.textContent = kp.fmt(i(t), dec); });
   }
 });
 
@@ -261,12 +263,12 @@ dash.draw('dial', {
     const c = 100, R = 80, W = 10;
     const svg = d3.select(el).append('svg').attr('viewBox', '0 0 200 200').attr('width', '100%').attr('height', '100%').attr('role', 'img');
     const st = {svg, prev: null, r: null};
-    svg.append('path').attr('d', kp.arc(c, c, R, -135, 135)).style('fill', 'none').style('stroke', 'rgba(255,255,255,.22)').style('stroke-width', W).style('stroke-linecap', 'round');
-    st.val = svg.append('path').style('fill', 'none').style('stroke', '#fff').style('stroke-width', W).style('stroke-linecap', 'round');
-    st.over = svg.append('path').style('fill', 'none').style('stroke', '#fff').style('stroke-width', 3).style('stroke-linecap', 'round');
+    svg.append('path').attr('d', kp.arc(c, c, R, -135, 135)).style('fill', 'none').style('stroke', kp.C.track).style('stroke-width', W).style('stroke-linecap', 'round');
+    st.val = svg.append('path').style('fill', 'none').style('stroke', kp.C.d).style('stroke-width', W).style('stroke-linecap', 'round');
+    st.over = svg.append('path').style('fill', 'none').style('stroke', kp.C.d2).style('stroke-width', 3).style('stroke-linecap', 'round');
     st.paceW = svg.append('line').style('stroke', '#fff').style('stroke-width', 7).style('stroke-linecap', 'round');
-    st.paceG = svg.append('line').style('stroke', kp.C.gd).style('stroke-width', 3.5).style('stroke-linecap', 'round');
-    st.tgt = svg.append('circle').attr('r', 4.2).style('fill', '#fff');
+    st.paceG = svg.append('line').style('stroke', kp.C.ink).style('stroke-width', 2.5).style('stroke-linecap', 'round');
+    st.tgt = svg.append('circle').attr('r', 4).style('fill', kp.C.ink);
     st.tip = kp.tip(el);
     svg.on('pointermove pointerdown', (ev) => {
       const r = st.r;
@@ -289,6 +291,7 @@ dash.draw('dial', {
   update: (el, st) => {
     const s = kp.rows('sel'), r = s ? s.find((x) => x.kpi === el.dataset.kpi) : null;
     st.r = r;
+    st.val.style('stroke', kp.ink(r));
     const to = r ? {pct: r.pct || 0, pace: r.pace || 0, target: r.target || 100, run: !r.final} : {pct: 0, pace: 0, target: 100, run: false};
     st.svg.attr('aria-label', r ? `${r.label}: đạt ${kp.fmt(r.pct, 0)}%, mục tiêu ${kp.fmt(r.target, 0)}%` : 'Đang tải');
     const from = st.prev || {pct: 0, pace: 0, target: to.target, run: to.run};
@@ -296,7 +299,7 @@ dash.draw('dial', {
     st.svg.interrupt();
     if (kp.still() || (from.pct === to.pct && from.pace === to.pace && from.target === to.target && from.run === to.run)) { st.paint(to); return; }
     const it = d3.interpolateObject(from, to);
-    st.svg.transition().duration(1100).ease(d3.easeCubicOut).tween('dial', () => (t) => st.paint(it(t)));
+    st.svg.transition().duration(800).ease(d3.easeCubicOut).tween('dial', () => (t) => st.paint(it(t)));
   }
 });
 
@@ -314,14 +317,14 @@ dash.draw('timeline', {
       st.svg = d3.select(el).append('svg').attr('width', '100%').attr('height', H).attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img');
       st.ticks = [];
       for (let d = 0; d <= n; d++) st.ticks.push(st.svg.append('line').attr('x1', x(d)).attr('x2', x(d)).attr('y1', 9).attr('y2', 19).style('stroke-width', d === 0 || d === n ? 2 : 1.2));
-      st.run = st.svg.append('line').attr('x1', x0).attr('y1', 14).attr('y2', 14).style('stroke', '#fff').style('stroke-width', 3).style('stroke-linecap', 'round');
-      st.dot = st.svg.append('circle').attr('cy', 14).attr('r', 7).style('fill', '#fff');
-      st.core = st.svg.append('circle').attr('cy', 14).attr('r', 3).style('fill', kp.C.g);
-      st.svg.append('path').attr('d', `M${x1},7 L${x1 + 6},14 L${x1},21 L${x1 - 6},14 Z`).style('fill', 'none').style('stroke', '#fff').style('stroke-width', 1.5);
+      st.run = st.svg.append('line').attr('x1', x0).attr('y1', 14).attr('y2', 14).style('stroke', kp.C.d).style('stroke-width', 3).style('stroke-linecap', 'round');
+      st.dot = st.svg.append('circle').attr('cy', 14).attr('r', 7).style('fill', kp.C.d);
+      st.core = st.svg.append('circle').attr('cy', 14).attr('r', 2.6).style('fill', '#fff');
+      st.svg.append('path').attr('d', `M${x1},7 L${x1 + 6},14 L${x1},21 L${x1 - 6},14 Z`).style('fill', 'none').style('stroke', kp.C.d).style('stroke-width', 1.5);
     }
     st.svg.attr('aria-label', c.running ? `Đã qua ${e} trên ${n} ngày của kỳ, còn ${c.left_days} ngày đến ngày chốt ${c.end_vi}.` : `Kỳ ${c.label} đã chốt, đủ ${n} ngày.`);
     const paint = (d) => {
-      st.ticks.forEach((t, i) => t.style('stroke', i <= d + 1e-6 ? '#fff' : 'rgba(255,255,255,.32)'));
+      st.ticks.forEach((t, i) => t.style('stroke', i <= d + 1e-6 ? kp.C.d : kp.C.tick));
       st.run.attr('x2', x(d)); st.dot.attr('cx', x(d)); st.core.attr('cx', x(d));
     };
     const from = st.f == null ? 0 : Math.min(st.f, n);
@@ -329,7 +332,7 @@ dash.draw('timeline', {
     st.svg.interrupt();
     if (kp.still() || from === e) { paint(e); return; }
     const i = d3.interpolateNumber(from, e);
-    st.svg.transition().duration(900).ease(d3.easeCubicOut).tween('t', () => (t) => paint(i(t)));
+    st.svg.transition().duration(700).ease(d3.easeCubicOut).tween('t', () => (t) => paint(i(t)));
   }
 });
 
@@ -345,8 +348,8 @@ dash.draw('bullet', {
       el.replaceChildren();
       st.W = W;
       st.svg = d3.select(el).append('svg').attr('width', '100%').attr('height', H).attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img');
-      st.svg.append('rect').attr('x', 2).attr('y', 8).attr('width', W - 5).attr('height', 8).attr('rx', 4).style('fill', 'rgba(31,41,55,.08)');
-      st.bar = st.svg.append('rect').attr('x', 2).attr('y', 8).attr('height', 8).attr('rx', 4).style('fill', kp.C.g);
+      st.svg.append('rect').attr('x', 2).attr('y', 8).attr('width', W - 5).attr('height', 8).attr('rx', 4).style('fill', kp.C.track);
+      st.bar = st.svg.append('rect').attr('x', 2).attr('y', 8).attr('height', 8).attr('rx', 4).style('fill', kp.C.d).style('transition', 'fill .45s');
       st.pw = st.svg.append('line').attr('y1', 3).attr('y2', 21).style('stroke', '#fff').style('stroke-width', 5);
       st.pg = st.svg.append('line').attr('y1', 3).attr('y2', 21).style('stroke', kp.C.ink).style('stroke-width', 2).style('stroke-dasharray', '3 2');
       st.tg = st.svg.append('line').attr('y1', 1).attr('y2', 23).style('stroke', kp.C.ink).style('stroke-width', 2.5);
@@ -360,6 +363,7 @@ dash.draw('bullet', {
       st.prev = null;
     }
     st.svg.attr('aria-label', `${r.label}: đạt ${kp.fmt(r.pct, 0)}%, mục tiêu ${kp.fmt(r.target, 0)}%`);
+    st.bar.style('fill', kp.ink(r));
     const to = {pct: r.pct || 0, pace: r.pace || 0, target: r.target || 100, max: Math.ceil(Math.max(100, r.target || 0, r.pct || 0) / 25) * 25, run: !r.final};
     const paint = (v) => {
       const x = (q) => 2 + (W - 5) * Math.max(0, Math.min(q, v.max)) / v.max;
@@ -372,7 +376,7 @@ dash.draw('bullet', {
     st.svg.interrupt();
     if (kp.still()) { paint(to); return; }
     const it = d3.interpolateObject(from, to);
-    st.svg.transition().duration(900).ease(d3.easeCubicOut).tween('b', () => (t) => paint(it(t)));
+    st.svg.transition().duration(700).ease(d3.easeCubicOut).tween('b', () => (t) => paint(it(t)));
   }
 });
 
@@ -397,31 +401,31 @@ dash.draw('curve', {
     const x = d3.scaleLinear([1, rows.length], [ml, W - mr]);
     const step = Math.max(1, Math.ceil(rows.length / Math.max(3, Math.floor((W - ml - mr) / 70))));
     rows.forEach((d, i) => { if (i % step === 0) svg.append('text').attr('x', x(d.day)).attr('y', H - 6).attr('text-anchor', 'middle').text(d.label); });
-    svg.append('line').attr('x1', ml).attr('x2', W - mr).attr('y1', y(100)).attr('y2', y(100)).style('stroke', kp.C.gd).style('stroke-width', 1.5);
-    svg.append('text').attr('x', W - mr + 5).attr('y', y(100)).attr('dy', '0.32em').style('fill', kp.C.gd).text('100%');
+    svg.append('line').attr('x1', ml).attr('x2', W - mr).attr('y1', y(100)).attr('y2', y(100)).style('stroke', kp.C.ink).style('stroke-width', 1).style('opacity', 0.55);
+    svg.append('text').attr('x', W - mr + 5).attr('y', y(100)).attr('dy', '0.32em').style('fill', kp.C.ink).text('100%');
     svg.append('path').datum(rows).attr('d', d3.line().x((d) => x(d.day)).y((d) => y(d.pace)))
-      .style('fill', 'none').style('stroke', kp.C.slate).style('stroke-width', 1.5).style('stroke-dasharray', '5 4');
+      .style('fill', 'none').style('stroke', kp.C.pace).style('stroke-width', 1.5).style('stroke-dasharray', '5 4');
     const avg = svg.append('path').datum(rows).attr('d', d3.line().defined((d) => d.prior_avg != null).x((d) => x(d.day)).y((d) => y(d.prior_avg)))
-      .style('fill', 'none').style('stroke', kp.C.gd).style('stroke-width', 2.5).style('stroke-dasharray', '0.5 5').style('stroke-linecap', 'round');
+      .style('fill', 'none').style('stroke', kp.C.d3).style('stroke-width', 2.5).style('stroke-dasharray', '0.5 5').style('stroke-linecap', 'round');
     const area = svg.append('path').datum(rows).attr('d', d3.area().defined((d) => d.sales != null).x((d) => x(d.day)).y0(y(0)).y1((d) => y(d.sales))).style('fill', kp.C.tint);
     const line = svg.append('path').datum(rows).attr('d', d3.line().defined((d) => d.sales != null).x((d) => x(d.day)).y((d) => y(d.sales)))
-      .style('fill', 'none').style('stroke', kp.C.g).style('stroke-width', 2.5).style('stroke-linejoin', 'round');
+      .style('fill', 'none').style('stroke', kp.C.d).style('stroke-width', 2.5).style('stroke-linejoin', 'round');
     const last = done[done.length - 1];
-    const lastDot = svg.append('circle').attr('cx', x(last.day)).attr('cy', y(last.sales)).attr('r', 5).style('fill', kp.C.g).style('stroke', '#fff').style('stroke-width', 2);
+    const lastDot = svg.append('circle').attr('cx', x(last.day)).attr('cy', y(last.sales)).attr('r', 5).style('fill', kp.C.d).style('stroke', '#fff').style('stroke-width', 2);
     const near = Math.abs(y(last.sales) - y(100)) < 16;
     const lastLab = svg.append('text').attr('class', 'eo-strong').attr('x', Math.min(x(last.day) + 8, W - 30)).attr('y', y(last.sales)).attr('dy', near ? '1.3em' : '-0.6em').text(kp.fmt(last.sales, 0) + '%');
     svg.attr('aria-label', `Doanh thu mới cộng dồn đến ngày ${last.label}: ${kp.fmt(last.sales, 0)}% mục tiêu` + (last.prior_avg != null ? `; các kỳ trước trung bình ${kp.fmt(last.prior_avg, 0)}% ở cùng ngày.` : '.'));
     if (month !== st.month && !kp.still()) {
       try {
         const L = line.node().getTotalLength();
-        line.attr('stroke-dasharray', `${L} ${L}`).attr('stroke-dashoffset', L).transition().duration(1200).ease(d3.easeCubicOut).attr('stroke-dashoffset', 0)
+        line.attr('stroke-dasharray', `${L} ${L}`).attr('stroke-dashoffset', L).transition().duration(900).ease(d3.easeCubicOut).attr('stroke-dashoffset', 0)
           .on('end', () => line.attr('stroke-dasharray', null));
-        [area, lastDot, lastLab].forEach((s) => s.style('opacity', 0).transition().delay(500).duration(700).style('opacity', 1));
-        avg.style('opacity', 0).transition().duration(900).style('opacity', 1);
+        [area, lastDot, lastLab].forEach((s) => s.style('opacity', 0).transition().delay(350).duration(500).style('opacity', 1));
+        avg.style('opacity', 0).transition().duration(600).style('opacity', 1);
       } catch (e) { /* no layout: draw at once */ }
     }
     st.month = month;
-    const focus = svg.append('circle').attr('r', 4.5).style('fill', '#fff').style('stroke', kp.C.g).style('stroke-width', 2).attr('visibility', 'hidden');
+    const focus = svg.append('circle').attr('r', 4.5).style('fill', '#fff').style('stroke', kp.C.d).style('stroke-width', 2).attr('visibility', 'hidden');
     const t = kp.tip(el);
     svg.append('rect').attr('x', ml).attr('y', 0).attr('width', W - ml - mr).attr('height', H - mb).style('fill', 'transparent')
       .on('pointermove pointerdown', (ev) => {
@@ -461,15 +465,15 @@ dash.draw('history', (el) => {
     const y = d3.scaleLinear([0, Math.max(110, vmax) * 1.04], [rh - bot, top]);
     if (i) g.append('line').attr('x1', 0).attr('x2', W).attr('y1', 0).attr('y2', 0).style('stroke', kp.C.hair);
     g.append('text').attr('class', 'eo-lab').attr('x', 0).attr('y', narrow ? 15 : (rh - bot + top) / 2).attr('dy', narrow ? 0 : '0.32em').text(s.name);
-    g.append('line').attr('x1', lw + 6).attr('x2', W - vw).attr('y1', y(s.t)).attr('y2', y(s.t)).style('stroke', kp.C.gd).style('stroke-width', 1).style('stroke-dasharray', '2 3').style('opacity', 0.6);
-    g.append('text').attr('x', W - vw + 6).attr('y', y(s.t)).attr('dy', '0.32em').style('fill', kp.C.gd).text(s.t + '%');
+    g.append('line').attr('x1', lw + 6).attr('x2', W - vw).attr('y1', y(s.t)).attr('y2', y(s.t)).style('stroke', kp.C.ink).style('stroke-width', 1).style('stroke-dasharray', '2 3').style('opacity', 0.6);
+    g.append('text').attr('x', W - vw + 6).attr('y', y(s.t)).attr('dy', '0.32em').style('fill', kp.C.ink).text(s.t + '%');
     g.append('path').datum(rows).attr('d', d3.line().defined((r) => r['ytd_' + s.k] != null).x((r) => x(r.month)).y((r) => y(r['ytd_' + s.k])))
-      .style('fill', 'none').style('stroke', kp.C.gd).style('stroke-width', 2.5).style('stroke-dasharray', '0.5 5').style('stroke-linecap', 'round');
+      .style('fill', 'none').style('stroke', kp.C.d3).style('stroke-width', 2.5).style('stroke-dasharray', '0.5 5').style('stroke-linecap', 'round');
     g.append('path').datum(rows).attr('d', d3.line().defined((r) => r[s.k] != null).x((r) => x(r.month)).y((r) => y(r[s.k])))
-      .style('fill', 'none').style('stroke', kp.C.g).style('stroke-width', 2).style('stroke-linejoin', 'round');
+      .style('fill', 'none').style('stroke', kp.C.d).style('stroke-width', 2).style('stroke-linejoin', 'round');
     g.selectAll('circle').data(rows.filter((r) => r[s.k] != null)).join('circle')
       .attr('cx', (r) => x(r.month)).attr('cy', (r) => y(r[s.k])).attr('r', (r) => (r.month === on ? 5.5 : r.running ? 4.5 : 3))
-      .style('fill', (r) => (r.running ? '#fff' : kp.C.g)).style('stroke', kp.C.g).style('stroke-width', 2);
+      .style('fill', (r) => (r.running ? '#fff' : kp.C.d)).style('stroke', kp.C.d).style('stroke-width', 2);
     const sr = rows.find((r) => r.month === on);
     if (sr && sr[s.k] != null) {
       const ly = y(sr[s.k]), clash = Math.abs(ly - y(s.t)) < 12;
@@ -508,8 +512,8 @@ dash.draw('avg', (el) => {
   const t = kp.tip(el);
   rows.forEach((r) => {
     const cx = x(r.month), cy = y(r.avg_m), sel = r.month === on;
-    svg.append('line').attr('x1', cx).attr('x2', cx).attr('y1', y(0)).attr('y2', cy).style('stroke', kp.C.g).style('stroke-width', sel ? 3 : 2).style('stroke-opacity', sel ? 1 : 0.4);
-    svg.append('circle').attr('cx', cx).attr('cy', cy).attr('r', sel ? 6 : 4).style('fill', r.running ? '#fff' : kp.C.g).style('fill-opacity', r.running || sel ? 1 : 0.5).style('stroke', kp.C.g).style('stroke-width', 2).style('stroke-opacity', sel ? 1 : 0.5);
+    svg.append('line').attr('x1', cx).attr('x2', cx).attr('y1', y(0)).attr('y2', cy).style('stroke', kp.C.d).style('stroke-width', sel ? 3 : 2).style('stroke-opacity', sel ? 1 : 0.4);
+    svg.append('circle').attr('cx', cx).attr('cy', cy).attr('r', sel ? 6 : 4).style('fill', r.running ? '#fff' : kp.C.d).style('fill-opacity', r.running || sel ? 1 : 0.5).style('stroke', kp.C.d).style('stroke-width', 2).style('stroke-opacity', sel ? 1 : 0.5);
     if (sel || x.step() >= 34) svg.append('text').attr('class', sel ? 'eo-strong' : null).attr('x', cx).attr('y', cy - 11).attr('text-anchor', 'middle').text(kp.fmt(r.avg_m, 2));
     svg.append('rect').attr('x', cx - x.step() / 2).attr('y', 0).attr('width', x.step()).attr('height', H - mb).style('fill', 'transparent').style('cursor', 'pointer')
       .on('pointermove pointerdown', (ev) => { const [px, py] = d3.pointer(ev, el); t.show([`${r.label} · ${r.state.toLowerCase()}`, `Bình quân ${kp.fmt(r.avg_m, 2)} triệu ₫`], px, py); })

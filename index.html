@@ -4,88 +4,100 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<meta name="theme-color" content="#BA3638">
+<meta name="theme-color" content="#FFFFFF">
 <title>Tiến độ mục tiêu tuyển sinh · Engonow</title>
 <style>
-html{background:#F3F1EE;-webkit-text-size-adjust:100%}
+html{background:#fff;-webkit-text-size-adjust:100%}
 body{margin:0;-webkit-font-smoothing:antialiased}
-.eo-page{max-width:1120px;margin:0 auto;padding:16px}
-@media (max-width:540px){.eo-page{padding:10px}}
+.eo-topline{height:4px;background:#BA3638}
+.eo-page{max-width:1120px;margin:0 auto;padding:8px 28px 24px}
+@media (max-width:540px){.eo-page{padding:4px 16px 20px}}
 </style>
 </head>
 <body>
+<div class="eo-topline" aria-hidden="true"></div>
 <main class="eo-page">
 <style>
 @font-face{font-family:"EO BVP";src:url("assets/fonts/bvp-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
 @font-face{font-family:"EO BVP";src:url("assets/fonts/bvp-SemiBold.woff2") format("woff2");font-weight:600;font-style:normal;font-display:swap}
 @font-face{font-family:"EO BVP";src:url("assets/fonts/bvp-Bold.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap}
 @font-face{font-family:"EO Lora";src:url("assets/fonts/lora-700.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap}
-.eo{--g:#BA3638;--gd:#8E2728;--cream:#FFF7F2;--ink:#1F2937;--slate:#6C757D;--gold:#C9A24B;--hair:rgba(31,41,55,.12);--ease:cubic-bezier(.2,.8,.2,1);
-  display:flex;flex-direction:column;gap:14px;color:var(--ink);line-height:1.5;font-family:"EO BVP","Be Vietnam Pro",Arial,sans-serif}
+/* Trang so lieu noi bo: trang chu dao, navy IELTS Master cho du lieu, garnet chi cho nhan dien va canh bao (CEO duyet 27/11/2026) */
+.eo{--navy:#323C5F;--navy-2:#5B6585;--navy-3:#7B84A0;--track:#E9EBF1;--tint:#F5F6F9;
+  --g:#BA3638;--gd:#8E2728;--g-t:#FBEDED;--gold:#C9A24B;--ink:#1F2937;--slate:#6C757D;--hair:#E6E8EE;
+  --ease:cubic-bezier(.22,.8,.24,1);--t-fast:.25s;--t-mid:.45s;
+  display:flex;flex-direction:column;color:var(--ink);line-height:1.5;font-family:"EO BVP","Be Vietnam Pro",Arial,sans-serif}
 .eo *{box-sizing:border-box}
+[hidden]{display:none!important}
 .eo-num,.eo-stats dd,.eo-avg-n,.eo-yt dd,.eo-time-top b,.eo-lead b,.eo-chart svg text,.eo-ms button{font-variant-numeric:tabular-nums}
-.eo h1,.eo h2{font-family:"EO Lora","Lora",Cambria,Georgia,serif;font-weight:700;margin:0;text-wrap:balance}
-.eo-hero{background:var(--g);color:#fff;border-radius:20px;padding:22px;display:flex;flex-direction:column;gap:18px;overflow:hidden}
+.eo h1,.eo h2{font-family:"EO Lora","Lora",Cambria,Georgia,serif;font-weight:700;margin:0;text-wrap:balance;color:var(--ink)}
+/* phan dau trang */
+.eo-hero{display:flex;flex-direction:column;gap:22px;padding:22px 0 30px}
 .eo-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.eo-logo{display:block;height:32px;width:auto}
-.eo-tag{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;opacity:.85}
-.eo-pick{display:flex;flex-direction:column;gap:6px;min-width:0}
-.eo-pick-l{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;opacity:.85}
-.eo-ms{position:relative;display:flex;align-items:center;gap:2px;overflow-x:auto;scrollbar-width:none;padding:4px;border-radius:999px;background:rgba(255,255,255,.14);min-height:42px}
+.eo-logo{display:block;height:30px;width:auto}
+.eo-tag{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
+.eo-pick{display:flex;flex-direction:column;gap:8px;min-width:0}
+.eo-pick-l{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--slate)}
+.eo-ms{position:relative;display:flex;align-items:center;gap:2px;overflow-x:auto;scrollbar-width:none;padding:4px;border-radius:999px;background:var(--tint);border:1px solid var(--hair);min-height:44px}
 .eo-ms::-webkit-scrollbar{display:none}
-.eo-ms-ind{position:absolute;top:4px;left:0;height:34px;width:0;border-radius:999px;background:#fff;z-index:0;transition:transform .5s var(--ease),width .5s var(--ease)}
-.eo-ms button{position:relative;z-index:1;flex:0 0 auto;min-width:46px;height:34px;padding:0 12px;border:0;background:none;color:#fff;font:600 13px "EO BVP","Be Vietnam Pro",Arial,sans-serif;border-radius:999px;cursor:pointer;transition:color .35s var(--ease);touch-action:manipulation;-webkit-tap-highlight-color:transparent}
-.eo-ms button[aria-pressed="true"]{color:var(--g)}
-.eo-ms button:focus-visible{outline:2px solid #fff;outline-offset:2px}
-.eo-ms button.run::after{content:"";position:absolute;top:7px;right:6px;width:5px;height:5px;border-radius:50%;background:currentColor}
-.eo-ms .yr{position:relative;z-index:1;flex:0 0 auto;font-size:10.5px;font-weight:700;letter-spacing:.14em;padding:0 6px 0 10px;opacity:.8}
-.eo-kicker{margin:0;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;opacity:.85}
-.eo-h1{margin-top:6px;font-size:clamp(24px,4.4vw,34px);line-height:1.2;letter-spacing:.01em}
-.eo-lead{margin:10px 0 0;font-size:15px;line-height:1.6;max-width:62ch}
-.eo-lead b{font-weight:700}
-.eo-rings{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.eo-ms-ind{position:absolute;top:4px;left:0;height:34px;width:0;border-radius:999px;background:var(--navy);box-shadow:0 6px 16px -8px rgba(50,60,95,.55);z-index:0;transition:transform var(--t-mid) var(--ease),width var(--t-mid) var(--ease)}
+.eo-ms button{position:relative;z-index:1;flex:0 0 auto;min-width:46px;height:34px;padding:0 12px;border:0;background:none;color:var(--ink);font:600 13px "EO BVP","Be Vietnam Pro",Arial,sans-serif;border-radius:999px;cursor:pointer;transition:color var(--t-fast) var(--ease),background-color var(--t-fast) var(--ease);touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.eo-ms button:hover{background:rgba(50,60,95,.07)}
+.eo-ms button[aria-pressed="true"]{color:#fff;background:none}
+.eo-ms button:focus-visible{outline:2px solid var(--navy);outline-offset:2px}
+.eo-ms button.run::after{content:"";position:absolute;top:7px;right:6px;width:5px;height:5px;border-radius:50%;background:var(--navy-2)}
+.eo-ms button.run[aria-pressed="true"]::after{background:#fff}
+.eo-ms .yr{position:relative;z-index:1;flex:0 0 auto;font-size:10.5px;font-weight:700;letter-spacing:.14em;padding:0 6px 0 10px;color:var(--slate)}
+.eo-kicker{margin:0;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--slate)}
+.eo-h1{margin-top:6px;font-size:clamp(26px,4.4vw,36px);line-height:1.2;letter-spacing:.005em}
+.eo-lead{margin:10px 0 0;font-size:15px;line-height:1.65;max-width:64ch;color:#3A4352}
+.eo-lead b{font-weight:700;color:var(--navy)}
+.eo-rings{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
 .eo-ring{margin:0;display:flex;flex-direction:column;align-items:center;gap:10px;min-width:0}
-.eo-dial{position:relative;width:100%;max-width:210px;aspect-ratio:1}
+.eo-dial{position:relative;width:100%;max-width:210px;aspect-ratio:1;transition:transform var(--t-mid) var(--ease)}
+.eo-ring:hover .eo-dial{transform:translateY(-3px)}
 .eo-dsvg{position:absolute;inset:0}
+.eo-dsvg path{transition:stroke var(--t-mid) var(--ease)}
 .eo-mid{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;pointer-events:none;padding-top:2%}
-.eo-num{font-weight:700;font-size:clamp(24px,7.4vw,46px);line-height:1;letter-spacing:-.01em}
-.eo-num small{font-size:.48em;font-weight:600;margin-left:1px}
-.eo-sub{margin-top:5px;font-size:clamp(9px,2.5vw,12px);opacity:.85;white-space:nowrap}
+.eo-num{font-weight:700;font-size:clamp(24px,7.4vw,46px);line-height:1;letter-spacing:-.01em;color:var(--ink)}
+.eo-num small{font-size:.48em;font-weight:600;margin-left:1px;color:var(--slate)}
+.eo-sub{margin-top:5px;font-size:clamp(9px,2.5vw,12px);color:var(--slate);white-space:nowrap}
 .eo-ring figcaption{display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center}
-.eo-cap{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
-.eo-pill,.eo-st{font-size:11.5px;font-weight:600;padding:2px 10px;border-radius:999px;border:1px solid currentColor;white-space:nowrap;transition:background-color .35s var(--ease),color .35s var(--ease),border-color .35s var(--ease)}
-.eo-pill{color:#fff}
-.eo-pill.ok,.eo-pill.done{background:#fff;border-color:#fff;color:var(--g)}
-.eo-pill.neutral{border-color:rgba(255,255,255,.5);color:rgba(255,255,255,.85)}
-.eo-st{color:var(--g)}
-.eo-st.ok,.eo-st.done{background:var(--g);border-color:var(--g);color:#fff}
-.eo-st.neutral{border-color:var(--hair);color:var(--slate)}
-.eo-pill.ok::before,.eo-st.ok::before{content:"◆ "}
-.eo-pill.done::before,.eo-st.done::before{content:"★ ";color:var(--gold)}
-.eo-pill.warn::before,.eo-st.warn::before,.eo-pill.bad::before,.eo-st.bad::before{content:"◇ "}
-.eo-pill.bad,.eo-st.bad{border-style:dashed}
-.eo-key{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 18px;margin:-4px 0 0;padding:0;list-style:none;font-size:11.5px;opacity:.9}
+.eo-cap{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink)}
+/* nhan trang thai: navy la on, garnet chi khi can chu y */
+.eo-pill,.eo-st{font-size:11.5px;font-weight:600;padding:2px 10px;border-radius:999px;border:1px solid var(--hair);color:var(--slate);background:#fff;white-space:nowrap;transition:background-color var(--t-mid) var(--ease),color var(--t-mid) var(--ease),border-color var(--t-mid) var(--ease)}
+.eo-pill.ok,.eo-st.ok{border-color:rgba(50,60,95,.35);color:var(--navy);background:#fff}
+.eo-pill.done,.eo-st.done{background:var(--navy);border-color:var(--navy);color:#fff}
+.eo-pill.warn,.eo-st.warn{border-color:var(--g);color:var(--g)}
+.eo-pill.bad,.eo-st.bad{border-color:var(--g);border-style:dashed;color:var(--gd);background:var(--g-t)}
+.eo-pill.ok::before,.eo-st.ok::before{content:"\25C6  "}
+.eo-pill.done::before,.eo-st.done::before{content:"\2605  ";color:var(--gold)}
+.eo-pill.warn::before,.eo-st.warn::before,.eo-pill.bad::before,.eo-st.bad::before{content:"\25C7  "}
+.eo-key{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 18px;margin:-6px 0 0;padding:0;list-style:none;font-size:11.5px;color:var(--slate)}
 .eo-key svg{display:inline-block;vertical-align:middle;margin-right:6px}
-.eo-time{border-top:1px solid rgba(255,255,255,.28);padding-top:14px}
-.eo-time-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;font-size:13px}
-.eo-time-top>span:first-child{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;opacity:.85}
+.eo-time{border-top:1px solid var(--hair);padding-top:16px}
+.eo-time-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;font-size:13px;color:var(--ink)}
+.eo-time-top>span:first-child{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--slate)}
 .eo-time-top b{font-weight:700}
 .eo-track{position:relative;min-height:28px;margin-top:6px}
-.eo-time-ends{display:flex;justify-content:space-between;gap:10px;font-size:11.5px;opacity:.85}
-.eo-card{background:#fff;color:var(--ink);border:1px solid var(--hair);border-radius:20px;padding:20px;min-width:0}
-.eo-card h2{font-size:18px;line-height:1.3}
-.eo-def{margin:4px 0 0;font-size:13px;color:var(--slate);line-height:1.55}
+.eo-time-ends{display:flex;justify-content:space-between;gap:10px;font-size:11.5px;color:var(--slate)}
+/* cac phan: nen trang, ngan bang duong ke manh */
+.eo-card{background:#fff;color:var(--ink);border-top:1px solid var(--hair);padding:30px 0;min-width:0}
+.eo-card h2{font-size:19px;line-height:1.3}
+.eo-def{margin:6px 0 0;font-size:13px;color:var(--slate);line-height:1.6;max-width:72ch}
 .eo-def b{color:var(--ink)}
-.eo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
-.eo-ytd{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:14px 0 0}
-.eo-yt{margin:0;background:var(--cream);border-radius:14px;padding:12px 14px;min-width:0}
+.eo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));column-gap:48px;border-top:1px solid var(--hair)}
+.eo-grid>.eo-card{border-top:0}
+.eo-ytd{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:16px 0 0}
+.eo-yt{margin:0;background:#fff;border:1px solid var(--hair);border-radius:14px;padding:14px 16px;min-width:0;transition:transform var(--t-mid) var(--ease),box-shadow var(--t-mid) var(--ease),border-color var(--t-mid) var(--ease)}
+.eo-yt:hover{transform:translateY(-3px);border-color:rgba(50,60,95,.25);box-shadow:0 14px 28px -18px rgba(50,60,95,.45)}
 .eo-yt dt{font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--slate);line-height:1.3}
-.eo-yt dd{margin:6px 0 0;font-weight:700;font-size:30px;line-height:1;color:var(--g)}
+.eo-yt dd{margin:8px 0 0;font-weight:700;font-size:30px;line-height:1;color:var(--navy)}
 .eo-yt dd small{font-size:13px;font-weight:600;color:var(--slate)}
-.eo-yt p{margin:8px 0 0;font-size:12px;line-height:1.4;color:var(--slate)}
+.eo-yt p{margin:10px 0 0;font-size:12px;line-height:1.4;color:var(--slate)}
 .eo-yt p b{color:var(--ink)}
-.eo-needs{margin-top:6px}
-.eo-need{padding:14px 0 2px;border-top:1px solid var(--hair)}
+.eo-needs{margin-top:8px}
+.eo-need{padding:16px 0 4px;border-top:1px solid var(--hair)}
 .eo-need:first-child{border-top:0}
 .eo-need-h{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
 .eo-need-n{font-weight:700;font-size:15px}
@@ -95,51 +107,55 @@ body{margin:0;-webkit-font-smoothing:antialiased}
 .eo-stats dt{font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--slate);line-height:1.3}
 .eo-stats dd{margin:4px 0 0;font-weight:700;font-size:22px;line-height:1.1}
 .eo-stats dd small{font-size:12px;font-weight:600;color:var(--slate)}
-.eo-avg{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin-top:12px}
-.eo-avg-n{font-weight:700;font-size:44px;line-height:1;color:var(--g)}
+.eo-avg{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin-top:14px}
+.eo-avg-n{font-weight:700;font-size:44px;line-height:1;color:var(--navy)}
 .eo-avg-u{font-size:14px;font-weight:600;color:var(--slate)}
 .eo-avg-c{margin:6px 0 0;font-size:13px;color:var(--slate)}
 .eo-avg-c b{color:var(--ink)}
-.eo-up{color:var(--g)}.eo-dn{color:var(--gd)}
-.eo-cmpline{margin:8px 0 0;font-size:13px;color:var(--slate);line-height:1.5}
+.eo .eo-up{color:var(--navy)}.eo .eo-dn{color:var(--g)}
+.eo-cmpline{margin:8px 0 0;font-size:13px;color:var(--slate);line-height:1.55}
 .eo-cmpline b{color:var(--ink)}
-.eo-chart{position:relative;min-height:220px;margin-top:12px}
+.eo-chart{position:relative;min-height:220px;margin-top:14px}
 .eo-chart-sm{min-height:160px}
 .eo-chart svg text{fill:var(--slate);font-size:11px;font-family:"EO BVP","Be Vietnam Pro",Arial,sans-serif}
 .eo-chart svg text.eo-strong{fill:var(--ink);font-weight:700;font-size:12px}
 .eo-chart svg text.eo-lab{fill:var(--ink);font-weight:600;font-size:12px}
-.eo-chart svg text.eo-on{fill:var(--g);font-weight:700}
-.eo-legend{display:flex;flex-wrap:wrap;gap:4px 18px;margin:10px 0 0;padding:0;list-style:none;font-size:12px;color:var(--slate)}
-.eo-sw{display:inline-block;width:18px;height:3px;border-radius:2px;vertical-align:middle;margin-right:6px;background:var(--g)}
-.eo-sw.pace{height:0;border-top:2px dashed var(--slate);background:none;border-radius:0}
-.eo-sw.avg{height:0;border-top:2.5px dotted var(--gd);background:none;border-radius:0}
-.eo-sw.tgt{height:2px;background:var(--gd)}
-.eo-sw.run{width:9px;height:9px;border-radius:50%;background:#fff;border:2px solid var(--g)}
-.eo-sw.band{width:12px;height:12px;border-radius:3px;background:rgba(186,54,56,.12)}
-.eo-tip{position:absolute;pointer-events:none;background:#fff;color:var(--ink);border:1px solid var(--hair);border-top:3px solid var(--g);border-radius:10px;padding:6px 10px;font-size:12px;line-height:1.5;white-space:nowrap;z-index:3;box-shadow:0 10px 24px -12px rgba(31,41,55,.4)}
+.eo-chart svg text.eo-on{fill:var(--navy);font-weight:700}
+.eo-legend{display:flex;flex-wrap:wrap;gap:4px 18px;margin:12px 0 0;padding:0;list-style:none;font-size:12px;color:var(--slate)}
+.eo-sw{display:inline-block;width:18px;height:3px;border-radius:2px;vertical-align:middle;margin-right:6px;background:var(--navy)}
+.eo-sw.pace{height:0;border-top:2px dashed #ADB5BD;background:none;border-radius:0}
+.eo-sw.avg{height:0;border-top:2.5px dotted var(--navy-3);background:none;border-radius:0}
+.eo-sw.tgt{height:1.5px;background:var(--ink)}
+.eo-sw.run{width:9px;height:9px;border-radius:50%;background:#fff;border:2px solid var(--navy)}
+.eo-sw.band{width:12px;height:12px;border-radius:3px;background:rgba(50,60,95,.10)}
+.eo-tip{position:absolute;pointer-events:none;background:#fff;color:var(--ink);border:1px solid var(--hair);border-top:3px solid var(--navy);border-radius:10px;padding:7px 11px;font-size:12px;line-height:1.5;white-space:nowrap;z-index:3;box-shadow:0 14px 30px -16px rgba(31,41,55,.35)}
 .eo-tip-h{font-weight:700}
 .eo-foot{display:flex;flex-direction:column;gap:12px;font-size:12.5px;color:var(--slate)}
-.eo-foot p{margin:0;line-height:1.55}
-.eo-foot details summary{cursor:pointer;color:var(--ink);font-weight:600}
-.eo-foot ul{margin:8px 0 0;padding-left:1.2em;display:flex;flex-direction:column;gap:4px;line-height:1.55}
-.eo-sign{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;border-top:1px solid var(--hair);padding-top:10px;font-size:11.5px}
+.eo-foot p{margin:0;line-height:1.6}
+.eo-foot details summary{cursor:pointer;color:var(--ink);font-weight:600;transition:color var(--t-fast) var(--ease)}
+.eo-foot details summary:hover{color:var(--navy)}
+.eo-foot ul{margin:8px 0 0;padding-left:1.2em;display:flex;flex-direction:column;gap:4px;line-height:1.6}
+.eo-sign{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;border-top:1px solid var(--hair);padding-top:12px;font-size:11.5px}
 .eo-sign b{font-family:"EO Lora","Lora",Georgia,serif;color:var(--g);letter-spacing:.14em}
 @media (max-width:640px){.eo-ytd{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:540px){.eo-pill{font-size:10.5px;padding:2px 8px;max-width:100%;white-space:normal;text-align:center;line-height:1.3}.eo-cap{font-size:10.5px;letter-spacing:.08em}.eo-h1{font-size:25px}.eo-hero{padding:18px 14px;border-radius:16px}.eo-card{padding:16px;border-radius:16px}.eo-rings{gap:6px}.eo-stats dd{font-size:19px}.eo-avg-n{font-size:38px}.eo-yt dd{font-size:26px}}
+@media (max-width:540px){.eo-pill{font-size:10.5px;padding:2px 8px;max-width:100%;white-space:normal;text-align:center;line-height:1.3}.eo-cap{font-size:10.5px;letter-spacing:.08em}.eo-h1{font-size:25px}.eo-hero{padding:16px 0 24px}.eo-card{padding:24px 0}.eo-rings{gap:6px}.eo-stats dd{font-size:19px}.eo-avg-n{font-size:38px}.eo-yt dd{font-size:26px}.eo-yt{padding:12px 13px}}
+/* chuyen canh: moi phan hien dan mot lan khi cuon toi */
 @media (prefers-reduced-motion:no-preference){
-  .eo>*{animation:eoRise .75s var(--ease) both}
-  .eo>:nth-child(2){animation-delay:.08s}.eo>:nth-child(3){animation-delay:.16s}.eo>:nth-child(4){animation-delay:.24s}.eo>:nth-child(5){animation-delay:.32s}.eo>:nth-child(6){animation-delay:.4s}
-  .eo-band{animation:eoFade .45s var(--ease) both}
+  .eo-hero>*{animation:eoRise .7s var(--ease) both}
+  .eo-hero>:nth-child(2){animation-delay:.06s}.eo-hero>:nth-child(3){animation-delay:.12s}.eo-hero>:nth-child(4){animation-delay:.18s}.eo-hero>:nth-child(5){animation-delay:.24s}.eo-hero>:nth-child(6){animation-delay:.3s}
+  .eo-rv{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+  .eo-rv.in{opacity:1;transform:none}
+  .eo-band{animation:eoFade .4s var(--ease) both}
 }
-@keyframes eoRise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes eoRise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 @keyframes eoFade{from{opacity:0}to{opacity:1}}
-@media (prefers-reduced-motion:reduce){.eo-ms-ind,.eo-ms button,.eo-pill,.eo-st{transition:none}}
+@media (prefers-reduced-motion:reduce){.eo-ms-ind,.eo-ms button,.eo-pill,.eo-st,.eo-yt,.eo-dial,.eo-dsvg path{transition:none}.eo-yt:hover,.eo-ring:hover .eo-dial{transform:none}}
 </style>
 
 <div class="eo" id="kp-root" lang="vi">
   <section class="eo-hero" id="tieu-de">
     <div class="eo-bar">
-      <img class="eo-logo" src="assets/engonow-white.png" alt="ENGONOW">
+      <img class="eo-logo" src="assets/engonow-colour.png" alt="ENGONOW" width="480" height="104">
       <span class="eo-tag">Khối Vận hành · Nội bộ</span>
     </div>
     <div class="eo-pick" id="chon-ky">
@@ -176,9 +192,9 @@ body{margin:0;-webkit-font-smoothing:antialiased}
       </figure>
     </div>
     <ul class="eo-key" aria-label="Chú giải vòng đo">
-      <li><svg width="18" height="10" aria-hidden="true"><rect x="0" y="3" width="18" height="4" rx="2" fill="#fff"/></svg>Đã đạt</li>
-      <li data-show="run"><svg width="10" height="14" aria-hidden="true"><line x1="5" y1="2" x2="5" y2="12" stroke="#fff" stroke-width="6" stroke-linecap="round"/><line x1="5" y1="2" x2="5" y2="12" stroke="#8E2728" stroke-width="3" stroke-linecap="round"/></svg>Nhịp cần có hôm nay</li>
-      <li><svg width="10" height="10" aria-hidden="true"><circle cx="5" cy="5" r="3.5" fill="#fff"/></svg>Mục tiêu</li>
+      <li><svg width="18" height="10" aria-hidden="true"><rect x="0" y="3" width="18" height="4" rx="2" fill="#323C5F"/></svg>Đã đạt</li>
+      <li data-show="run"><svg width="10" height="14" aria-hidden="true"><line x1="5" y1="2" x2="5" y2="12" stroke="#1F2937" stroke-width="2.5" stroke-linecap="round"/></svg>Nhịp cần có hôm nay</li>
+      <li><svg width="10" height="10" aria-hidden="true"><circle cx="5" cy="5" r="3.5" fill="#1F2937"/></svg>Mục tiêu</li>
     </ul>
 
     <div class="eo-time" id="thoi-gian-ky">
@@ -188,7 +204,7 @@ body{margin:0;-webkit-font-smoothing:antialiased}
     </div>
   </section>
 
-  <section class="eo-card" id="trung-binh">
+  <section class="eo-card eo-rv" id="trung-binh">
     <h2>Trung bình đến kỳ đang xem</h2>
     <p class="eo-def" data-show="ytd">Trung bình các kỳ đã chốt từ <b data-draw="f" data-source="selm" data-field="ytd_from" data-row="0">—</b> đến <b data-draw="f" data-source="selm" data-field="ytd_to" data-row="0">—</b> (<b data-draw="f" data-source="selm" data-field="ytd_n" data-row="0">—</b> kỳ).<span data-show="cmp"> Dòng dưới mỗi ô so <span data-draw="f" data-source="selm" data-field="cmp_basis" data-row="0">—</span> của kỳ đang xem với trung bình các kỳ trước nó (<span data-draw="f" data-source="selm" data-field="prior_n" data-row="0">—</span> kỳ).</span></p>
     <p class="eo-def" data-show="noytd" hidden>Chưa có kỳ nào đã chốt trước kỳ này trong năm.</p>
@@ -200,7 +216,7 @@ body{margin:0;-webkit-font-smoothing:antialiased}
     </dl>
   </section>
 
-  <section class="eo-card" id="can-toi-dau">
+  <section class="eo-card eo-rv" id="can-toi-dau">
     <h2 data-show="run">Cần tới đâu để đạt mục tiêu</h2>
     <h2 data-show="done" hidden>Kết quả chốt so với mục tiêu</h2>
     <p class="eo-def">Số liệu tính đến hết ngày <span data-draw="f" data-source="selm" data-field="data_through_vi" data-row="0">—</span>. Thanh là phần đã đạt, vạch đậm là mục tiêu<span data-show="run">, vạch đứt là nhịp cần có hôm nay</span>.</p>
@@ -244,7 +260,7 @@ body{margin:0;-webkit-font-smoothing:antialiased}
     </div>
   </section>
 
-  <div class="eo-grid">
+  <div class="eo-grid eo-rv">
     <section class="eo-card" id="tien-do-ky">
       <h2>Doanh thu mới theo ngày trong kỳ</h2>
       <p class="eo-cmpline" data-show="day">Đến ngày <b data-draw="f" data-source="dayx" data-field="label" data-row="0">—</b>, kỳ đang xem đạt <b data-draw="f" data-source="dayx" data-field="sales" data-row="0">—</b>% mục tiêu<span data-show="dayavg">; các kỳ trước trong năm trung bình <b data-draw="f" data-source="dayx" data-field="prior_avg" data-row="0">—</b>% ở cùng ngày (<span data-draw="f" data-source="dayx" data-field="prior_n" data-row="0">—</span> kỳ), chênh <b data-draw="sign" data-source="dayx" data-field="diff" data-row="0">—</b> điểm</span>.</p>
@@ -267,7 +283,7 @@ body{margin:0;-webkit-font-smoothing:antialiased}
     </section>
   </div>
 
-  <section class="eo-card" id="lich-su">
+  <section class="eo-card eo-rv" id="lich-su">
     <h2>Kết quả từng kỳ và trung bình đến kỳ đó</h2>
     <p class="eo-def">Mỗi dòng một chỉ số. Đường chấm là trung bình các kỳ đã chốt tính đến từng kỳ. Chạm một kỳ để xem chi tiết.</p>
     <ul class="eo-legend" data-source="months">
@@ -279,7 +295,7 @@ body{margin:0;-webkit-font-smoothing:antialiased}
     <div class="eo-chart" data-draw="history" data-source="months"></div>
   </section>
 
-  <section class="eo-card eo-foot" id="che-so">
+  <section class="eo-card eo-foot eo-rv" id="che-so">
     <p>Trang dùng chung cho nhiều phòng ban nên chỉ hiển thị tỷ lệ % so với mục tiêu. Số tiền, số học viên và mục tiêu tuyệt đối không có trên trang và trong dữ liệu của trang.</p>
     <details id="cach-tinh">
       <summary>Nguồn và cách tính</summary>
@@ -301,5 +317,6 @@ body{margin:0;-webkit-font-smoothing:antialiased}
 <script src="assets/d3.min.js"></script>
 <script src="dash-lite.js"></script>
 <script src="app.js"></script>
+<script src="reveal.js"></script>
 </body>
 </html>
